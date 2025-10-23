@@ -1,0 +1,189 @@
+/* pheonix.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    transition: background 0.5s, color 0.5s;
+    overflow-x: hidden;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #E57209;
+}
+
+
+.toggle-theme {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+
+.founders {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.founder-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.founder-card:hover {
+    transform: translateY(-10px);
+}
+
+.founder-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a img {
+    width: 25px;
+    height: 25px;
+    transition: filter 0.3s;
+}
+
+.social-links a:hover img {
+    filter: drop-shadow(0 0 5px #E57209);
+}
+
+
+.infinite-scroll {
+    animation: scrollLeft 20s linear infinite;
+}
+
+.infinite-scroll:hover {
+    animation-play-state: paused;
+}
+
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+.contact a {
+    background: #E57209;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact a:hover {
+    background: white;
+    color: black;
+}
+
+
+body.dark {
+    background: url('https://pbs.twimg.com/media/G3R7CLPXQAAuaT3?format=jpg&name=360x360') no-repeat center/cover;
+    color: white;
+}
+
+body.light {
+    background: url('https://pbs.twimg.com/media/G1WiGp2WYAA1B0b?format=jpg&name=360x360') no-repeat center/cover;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+    }
+
+    .nav a {
+        margin: 0.5rem 0.5rem 0 0;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+}
